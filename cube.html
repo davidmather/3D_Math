@@ -1,0 +1,54 @@
+<style>
+    
+</style>
+
+<script>
+      
+    function Three_Dimensional_Resolve_Points(matrix){
+         var svg = {width:800, height: 800}, midpoint = {x:svg.width/2, y:svg.height/2}; 
+         Z_Translate = {X : -1, Y : 1}
+         X = matrix[0] + (matrix[2]*Z_Translate.X) + midpoint.x;
+         Y = matrix[1] + (matrix[2]*Z_Translate.Y) + midpoint.y;
+         return [X,Y];
+     }    
+    
+    
+    svg = {
+        width     : 800,
+        height    : 800,
+        midpointx : 800/2, 
+        midpointy : 800/2,        
+    }
+
+    
+       
+    axes ='<svg height="'+svg.height+'" width="'+svg.width+'"><line x1="'+svg.midpointx+'" y1="0" x2="'+svg.midpointx+'" y2="'+svg.height+'" style="stroke:rgb(255,0,0);" />';
+    axes = axes + '<line x1="0" y1="'+svg.midpointy+'" x2="'+svg.width+'" y2="'+svg.midpointx+'" style="stroke:rgb(0,255,0);" />';
+    axes = axes + '<line x1="'+Three_Dimensional_Resolve_Points([0,0,-550])[0]+'" y1="'+Three_Dimensional_Resolve_Points([0,0,-550])[1]+'" x2="'+Three_Dimensional_Resolve_Points([0,0,550])[0]+'" y2="'+Three_Dimensional_Resolve_Points([0,0,550])[1]+'" style="stroke:rgb(0,0,255);" />';   
+    
+    axes = axes + '<line x1="'+Three_Dimensional_Resolve_Points([0,0,-105])[0]+'" y1="'+Three_Dimensional_Resolve_Points([0,0,-105])[1]+'" x2="'+Three_Dimensional_Resolve_Points([100,0,-105])[0]+'" y2="'+Three_Dimensional_Resolve_Points([100,0,-105])[1]+'" style="stroke:rgb(125,125,125)" stroke-width="2" stroke-linecap="butt" stroke-dasharray="1, 2" />';
+    
+    axes = axes + '<line x1="'+Three_Dimensional_Resolve_Points([100,0,0])[0]+'" y1="'+Three_Dimensional_Resolve_Points([100,0,0])[1]+'" x2="'+Three_Dimensional_Resolve_Points([100,0,-105])[0]+'" y2="'+Three_Dimensional_Resolve_Points([100,0,-105])[1]+'" style="stroke:rgb(125,125,125)" stroke-width="2" stroke-linecap="butt" stroke-dasharray="1, 2" />';
+    
+    axes = axes + '<line x1="'+Three_Dimensional_Resolve_Points([0,-50,0])[0]+'" y1="'+Three_Dimensional_Resolve_Points([0,-50,0])[1]+'" x2="'+Three_Dimensional_Resolve_Points([0,-50,-105])[0]+'" y2="'+Three_Dimensional_Resolve_Points([0,-50,-105])[1]+'" style="stroke:rgb(125,125,125)" stroke-width="2" stroke-linecap="butt" stroke-dasharray="1, 2" />';
+    
+    axes = axes + '<line x1="'+Three_Dimensional_Resolve_Points([0,0,-105])[0]+'" y1="'+Three_Dimensional_Resolve_Points([0,0,-105])[1]+'" x2="'+Three_Dimensional_Resolve_Points([0,-50,-105])[0]+'" y2="'+Three_Dimensional_Resolve_Points([0,-50,-105])[1]+'" style="stroke:rgb(125,125,125)" stroke-width="2" stroke-linecap="butt" stroke-dasharray="1, 2" />';
+    
+    axes = axes + '<line x1="'+Three_Dimensional_Resolve_Points([0,-50,-105])[0]+'" y1="'+Three_Dimensional_Resolve_Points([0,-50,-105])[1]+'" x2="'+Three_Dimensional_Resolve_Points([100,-50,-105])[0]+'" y2="'+Three_Dimensional_Resolve_Points([100,-50,-105])[1]+'" style="stroke:rgb(125,125,125)" stroke-width="2" stroke-linecap="butt" stroke-dasharray="1, 2" />';
+    
+    axes = axes + '<line x1="'+Three_Dimensional_Resolve_Points([100,0,-105])[0]+'" y1="'+Three_Dimensional_Resolve_Points([100,0,-105])[1]+'" x2="'+Three_Dimensional_Resolve_Points([100,-50,-105])[0]+'" y2="'+Three_Dimensional_Resolve_Points([100,-50,-105])[1]+'" style="stroke:rgb(125,125,125)" stroke-width="2" stroke-linecap="butt" stroke-dasharray="1, 2" />';    
+    
+    axes = axes + '<line x1="'+Three_Dimensional_Resolve_Points([100,0,0])[0]+'" y1="'+Three_Dimensional_Resolve_Points([100,0,0])[1]+'" x2="'+Three_Dimensional_Resolve_Points([100,-50,0])[0]+'" y2="'+Three_Dimensional_Resolve_Points([100,-50,0])[1]+'" style="stroke:rgb(125,125,125)" stroke-width="2" stroke-linecap="butt" stroke-dasharray="1, 2" />';
+    
+    axes = axes + '<line x1="'+Three_Dimensional_Resolve_Points([0,-50,0])[0]+'" y1="'+Three_Dimensional_Resolve_Points([0,-50,0])[1]+'" x2="'+Three_Dimensional_Resolve_Points([100,-50,0])[0]+'" y2="'+Three_Dimensional_Resolve_Points([100,-50,0])[1]+'" style="stroke:rgb(125,125,125)" stroke-width="2" stroke-linecap="butt" stroke-dasharray="1, 2" />';  
+    
+   axes = axes + '<line x1="'+Three_Dimensional_Resolve_Points([100,-50,0])[0]+'" y1="'+Three_Dimensional_Resolve_Points([100,-50,0])[1]+'" x2="'+Three_Dimensional_Resolve_Points([100,-50,-105])[0]+'" y2="'+Three_Dimensional_Resolve_Points([100,-50,-105])[1]+'" style="stroke:rgb(125,125,125)" stroke-width="2" stroke-linecap="butt" stroke-dasharray="1, 2" />';   
+    
+    axes = axes + '<circle cx="'+Three_Dimensional_Resolve_Points([100,-50,-105])[0]+'" cy="'+Three_Dimensional_Resolve_Points([100,-50,-105])[1]+'" r="1" stroke="black" stroke-width="3" fill="black" />';
+    
+    axes = axes + '</svg>';    
+
+    document.write(axes); 
+     
+</script>
+
